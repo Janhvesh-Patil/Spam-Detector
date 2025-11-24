@@ -1,0 +1,55 @@
+{
+  "model_info": {
+    "name": "Spam Email Detector",
+    "model_type": "MultinomialNB",
+    "version": "1.0",
+    "training_date": "2025-11-24 05:26:28",
+    "description": "Naive Bayes classifier for spam email detection"
+  },
+  "model_parameters": {
+    "alpha": 0.1
+  },
+  "preprocessing": {
+    "vectorization": "TF-IDF",
+    "max_features": 3000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "text_processing": [
+      "Lowercase conversion",
+      "Whitespace normalization",
+      "Punctuation preserved"
+    ]
+  },
+  "performance_metrics": {
+    "accuracy": 0.9825918762088974,
+    "precision": 0.9829059829059829,
+    "recall": 0.8778625954198473,
+    "f1_score": 0.9274193548387096,
+    "confusion_matrix": {
+      "true_negatives": 901,
+      "false_positives": 2,
+      "false_negatives": 16,
+      "true_positives": 115
+    }
+  },
+  "dataset_info": {
+    "total_samples": 5169,
+    "train_samples": 4135,
+    "test_samples": 1034,
+    "ham_count": 4516,
+    "spam_count": 653,
+    "spam_percentage": 12.633004449603405
+  },
+  "label_mapping": {
+    "ham": "Legitimate Email",
+    "spam": "Spam Email"
+  },
+  "usage_recommendations": {
+    "best_for": "Email clients prioritizing user experience",
+    "strength": "High precision - minimizes false positives",
+    "consideration": "May miss some spam (88% recall) but rarely flags legitimate emails as spam"
+  }
+}
